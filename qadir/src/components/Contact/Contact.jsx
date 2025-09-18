@@ -20,7 +20,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://portfolio0-zeta.vercel.app/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -134,6 +134,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Cards */}
           <div className="flex flex-col gap-6">
             {contactInfo.map((item, index) => (
               <div
