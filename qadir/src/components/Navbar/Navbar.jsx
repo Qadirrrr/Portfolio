@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaHome, FaUser, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "#home", label: "Home", icon: <FaHome className="inline-block mr-2" /> },
+    { href: "#about", label: "About", icon: <FaUser className="inline-block mr-2" /> },
+    { href: "#projects", label: "Projects", icon: <FaProjectDiagram className="inline-block mr-2" /> },
+    { href: "#contact", label: "Contact", icon: <FaEnvelope className="inline-block mr-2" /> },
   ];
 
   // Smooth scroll handler
@@ -25,10 +26,14 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-lg border-b border-slate-800 shadow-lg">
       <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-        {/* Gradient Logo with Glow */}
-        <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-500 cursor-pointer drop-shadow-[0_0_12px_rgba(6,182,212,0.8)]">
-          Ghulam Qadir
-        </h1>
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img
+            src="/Logo.png"
+            alt="Ghulam Qadir"
+            className="h-12 w-auto object-contain"
+          />
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -45,14 +50,14 @@ export default function Navbar() {
               key={link.href}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group"
+              className="relative group flex items-center"
             >
               <a
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-slate-200 hover:text-cyan-400 transition duration-300"
+                className="text-slate-200 hover:text-cyan-400 transition duration-300 flex items-center"
               >
-                {link.label}
+                {link.icon} {link.label}
               </a>
               {/* Hover underline */}
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-indigo-500 transition-all duration-300 group-hover:w-full"></span>
@@ -82,9 +87,9 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={(e) => handleScroll(e, link.href)}
-                    className="text-slate-200 hover:text-emerald-400 transition duration-300"
+                    className="text-slate-200 hover:text-emerald-400 transition duration-300 flex items-center"
                   >
-                    {link.label}
+                    {link.icon} {link.label}
                   </a>
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-indigo-500 transition-all duration-300 group-hover:w-full"></span>
                 </motion.li>

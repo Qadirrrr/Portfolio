@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
+import { FaDownload, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa"; // ✅ Added LinkedIn & GitHub
 import heroImg from "../../assets/hero.jpg"; // replace with your image
 import myCV from "../../assets/QadirResume.pdf"; // add your CV file in assets
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-16">
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-16"
+    >
       {/* Left Content */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
@@ -23,29 +27,60 @@ export default function Hero() {
           <span className="text-indigo-400 font-semibold">
             Software Developer
           </span>{" "}
-          crafting modern web experiences with React, Tailwind, and cutting-edge technologies.
+          crafting modern web experiences with React, Tailwind, and cutting-edge
+          technologies.
         </p>
+
+        {/* Buttons */}
         <div className="mt-8 flex gap-4 justify-center md:justify-start">
           {/* Download CV Button */}
-         
-        <motion.a
-          whileHover={{ scale: 1.1 }}
-          href={myCV}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-semibold shadow-lg"
-        >
-          Download CV
-        </motion.a>
-          
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href={myCV}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-semibold shadow-lg flex items-center gap-2"
+          >
+            <FaDownload className="text-lg" /> Download CV
+          </motion.a>
 
-          {/* Contact Me Button */}
+          {/* Contact Me Button with Gradient Border */}
           <motion.a
             whileHover={{ scale: 1.1 }}
             href="#contact"
-            className="px-6 py-3 rounded-full border border-slate-600 hover:bg-slate-800 font-semibold"
+            className="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-slate-200 rounded-full overflow-hidden"
           >
-            Contact Me
+            {/* Gradient Border */}
+            <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-indigo-400 via-cyan-400 to-blue-400">
+              <span className="block h-full w-full rounded-full bg-slate-900"></span>
+            </span>
+
+            {/* Button Content */}
+            <span className="relative flex items-center gap-2">
+              <FaEnvelope className="text-lg" /> Contact Me
+            </span>
+          </motion.a>
+        </div>
+
+        {/* Social Icons */}
+        <div className="mt-6 flex gap-6 justify-center md:justify-start text-2xl">
+          <motion.a
+            whileHover={{ scale: 1.2 }}
+            href="https://www.linkedin.com/in/ghulam-qadirr/" // 🔗 Replace with your LinkedIn
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 hover:text-indigo-400 transition-colors"
+          >
+            <FaLinkedin />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.2 }}
+            href="https://github.com/Qadirrrr" // 🔗 Replace with your GitHub
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 hover:text-indigo-400 transition-colors"
+          >
+            <FaGithub />
           </motion.a>
         </div>
       </motion.div>

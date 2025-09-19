@@ -48,7 +48,7 @@ const experience = [
 
 // ✅ Stats Data
 const stats = [
-  { id: 1, label: "Happy Clients", value: "10+", icon: <FaSmile className="text-yellow-400" /> },
+  { id: 1, label: "Happy Clients", value: "5+", icon: <FaSmile className="text-yellow-400" /> },
   { id: 2, label: "Projects Completed", value: "10+", icon: <FaProjectDiagram className="text-cyan-400" /> },
   { id: 3, label: "Years Experience", value: "2+", icon: <FaRegClock className="text-indigo-400" /> },
   { id: 4, label: "Technologies Mastered", value: "15+", icon: <FaTools className="text-emerald-400" /> },
