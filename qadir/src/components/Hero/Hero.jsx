@@ -16,13 +16,13 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="flex-1 text-center md:text-left"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
           Hi, I’m{" "}
           <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Ghulam Qadir
           </span>
         </h1>
-        <p className="mt-6 text-lg text-slate-300 max-w-xl mx-auto md:mx-0">
+        <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-xl mx-auto md:mx-0">
           A passionate{" "}
           <span className="text-indigo-400 font-semibold">
             Software Developer
@@ -32,23 +32,23 @@ export default function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-8 flex gap-4 justify-center md:justify-start">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           {/* Download CV Button */}
           <motion.a
             whileHover={{ scale: 1.1 }}
             href={myCV}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-semibold shadow-lg flex items-center gap-2"
+            className="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-medium sm:font-semibold shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base"
           >
-            <FaDownload className="text-lg" /> Download CV
+            <FaDownload className="text-sm sm:text-md" /> Download CV
           </motion.a>
 
           {/* Contact Me Button with Gradient Border */}
           <motion.a
             whileHover={{ scale: 1.1 }}
             href="#contact"
-            className="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-slate-200 rounded-full overflow-hidden"
+            className="relative inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 font-medium sm:font-semibold text-slate-200 rounded-full overflow-hidden text-sm sm:text-base"
           >
             {/* Gradient Border */}
             <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-indigo-400 via-cyan-400 to-blue-400">
@@ -57,13 +57,13 @@ export default function Hero() {
 
             {/* Button Content */}
             <span className="relative flex items-center gap-2">
-              <FaEnvelope className="text-lg" /> Contact Me
+              <FaEnvelope className="text-sm sm:text-md" /> Contact Me
             </span>
           </motion.a>
         </div>
 
         {/* Social Icons */}
-        <div className="mt-6 flex gap-6 justify-center md:justify-start text-2xl">
+        <div className="mt-6 flex gap-6 justify-center md:justify-start text-xl sm:text-2xl">
           <motion.a
             whileHover={{ scale: 1.2 }}
             href="https://www.linkedin.com/in/ghulam-qadirr/" // 🔗 Replace with your LinkedIn
@@ -97,7 +97,7 @@ export default function Hero() {
           <img
             src={heroImg}
             alt="Hero"
-            className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
+            className="w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
           />
         </div>
       </motion.div>
